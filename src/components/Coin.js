@@ -7,7 +7,7 @@ const Coin = ({ coin }) => {
 
 
   // destructuring coin
-  const { id, rank, name, quotes: { USD: { percentage_change_24h } } } = coin;
+  const { id, rank, name, quotes: { USD: { percent_change_1h,percent_change_24h, percent_change_7d} } } = coin;
 
   // console.log(coin)
   return (
@@ -18,8 +18,14 @@ const Coin = ({ coin }) => {
             <p>{name}</p>
             <p>id:{id}</p>
             <p>rank :{rank}</p>
-            {percentage_change_24h !== null &&
-              <span className={percentage_change_24h < 0 ? Styles.redSpan : Styles.greenSpan}>{percentage_change_24h.toFixed(2)}</span>
+            {percent_change_1h !== null &&
+              <span className={percent_change_1h < 0 ? Styles.redSpan : Styles.greenSpan}>1h:{percent_change_1h.toFixed(2)}</span>
+            }
+             {percent_change_24h !== null &&
+              <span className={percent_change_24h < 0 ? Styles.redSpan : Styles.greenSpan}>24h:{percent_change_24h.toFixed(2)}</span>
+            }
+             {percent_change_7d !== null &&
+              <span className={percent_change_7d < 0 ? Styles.redSpan : Styles.greenSpan}>7d:{percent_change_7d.toFixed(2)}</span>
             }
           </div>
         </div>

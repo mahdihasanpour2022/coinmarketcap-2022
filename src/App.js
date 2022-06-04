@@ -1,14 +1,15 @@
 import React from 'react';
-import {getData} from "./getdata";
+import Landing from './components/Landing';
+import {Provider} from "react-redux";
+import Store from "./redux/Store";
 
 const App = () => {
 
-
-  getData()
-
-
   return (
     <>
+    <Provider store={Store} >
+      <Landing />
+    </Provider>
     </>
   );
 };

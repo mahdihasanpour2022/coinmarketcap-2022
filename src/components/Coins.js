@@ -6,11 +6,12 @@ const Coins = () => {
 
   const {coins,error,loading} = useSelector(state=>state.coinsState)
 
+  console.log(coins)
   return (
     <>
       {!!loading ? <p>loading ...</p> :
       !!error ? <p>{error}</p> :
-      coins.map(item => <Coin  key={item.id}/>)
+      coins.map(item => <Coin key={item.id} coin={item} />)
       }
     </>
   );

@@ -1,9 +1,13 @@
 import React from 'react';
 
-const Coin = () => {
+const Coin = ({coin}) => {
+
+
+  // destructuring 
+  const {name} = coin;
   return (
     <>
-      coin
+      <p>{name}</p>
     </>
   );
 };

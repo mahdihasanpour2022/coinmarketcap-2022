@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import Coin from "../components/Coin";
 // action creator 
@@ -9,20 +9,25 @@ import Styles from "../assets/styles/components_styles/Coins.module.scss";
 
 const Coins = () => {
 
+  
   const dispatch = useDispatch();
   const {coinsSortById, coinsSortByRank, error, loading } = useSelector(state => state.coinsState)
 
+  const [array,setArray] = useState(coinsSortByRank);
+  
   useEffect(() => {
-    dispatch(fetchCoinsSortByRank())
+    dispatch(fetchCoinsSortByRank());
   }, [dispatch])
 
   const selectHandler = e => {
     const selectValue = e.target.value;
     if (selectValue === "id") {
       dispatch(fetchCoinsSortById())
+    setArray(coinsSortById)
     }
   }
 
+  // console.log(array)
   return (
     <>
       {
@@ -44,7 +49,7 @@ const Coins = () => {
                 </div>
               </div>
               <div className={`${Styles.coins}`}>
-                {coinsSortByRank.map(item => <Coin key={item.name} coin={item} />)}
+                {array.map(item => <Coin key={item.name} coin={item} />)}
               </div>
             </div>
       }

@@ -5,5 +5,5 @@
 .coins {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  min-height: 100vh;
+  // min-height: 100vh;
 }

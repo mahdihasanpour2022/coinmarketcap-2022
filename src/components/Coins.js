@@ -9,11 +9,12 @@ const Coins = () => {
 
   return (
     <>
-      {!!loading ? <p>loading coins...</p> :
+      {
+      !!loading ? <p>loading coins...</p> :
         !!error ? <p>{error}</p> :
           !!coins.length &&
-          <div className="container">
-            <div className={`${Styles.coins} row m-0 g-5`}>
+          <div className="container p-0">
+            <div className={`${Styles.coins} row`}>
               {coins.map(item => <Coin key={item.id} coin={item} />)}
             </div>
           </div>

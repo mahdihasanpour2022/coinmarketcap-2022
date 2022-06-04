@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 // react redux 
 import { useDispatch, useSelector } from 'react-redux';
-// action creator 
-import fetchCoins from '../redux/coins/coinAC';
+
 // action creator 
 import { sideMenu_Ac } from "../redux/menu/menu_AC";
 // components 
@@ -18,15 +17,11 @@ const Landing = () => {
   const { sideMenu } = useSelector(state => state.menuState);
 
 
-  useEffect(() => {
-    dispatch(fetchCoins())
-  }, [dispatch])
 
   return (
     <>
       <div className={sideMenu ? `${Styles.landingContainerFullWidth} ${Styles.landingContainerlowWidth}` : Styles.landingContainerFullWidth}>
-        {!sideMenu && <TiThMenu onClick={() => dispatch(sideMenu_Ac(true))} />}
-        <p>landing home</p>
+        {!sideMenu && <TiThMenu className={Styles.menuIcon} onClick={() => dispatch(sideMenu_Ac(true))} />}
       </div>
     </>
   );

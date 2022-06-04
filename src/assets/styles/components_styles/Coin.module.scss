@@ -3,21 +3,37 @@
 @import "../common_styles/mixins";
 
 
-.coinContainer{
+.coinContainer {
   margin: 0.1rem;
-  .coin{
+
+  .coin {
     width: 100%;
     height: 100%;
     text-align: center;
     padding: 0.75rem;
     margin: 0;
     background-color: $ultra_black;
-    border: 1px solid $black;
     border-radius: 5px;
     box-sizing: border-box;
-    p{
+
+    @include flex(space-between, center) {
+      flex-direction: column;
+    }
+
+    ;
+
+    p {
       @include ziro_space;
       font-size: $fs_small;
+    }
+
+    .redSpan {
+      color: rgb(185, 67, 67);
+    }
+
+    .greenSpan {
+      color: rgb(63, 120, 63);
+      font-weight: 600;
     }
   }
 }

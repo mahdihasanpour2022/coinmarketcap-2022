@@ -19,11 +19,10 @@ const CoinRouter = () => {
   const dispatch = useDispatch();
   const { sideMenu } = useSelector(state => state.menuState);
 
-  console.log(sideMenu)
   return (
     <>
       <div className={sideMenu ? `${Styles.coinsContainerFullWidth} ${Styles.coinsContainerLowWidth}` : Styles.coinsContainerFullWidth}>
-        {!sideMenu && <TiThMenu onClick={() => dispatch(sideMenu_Ac(true))} />}
+        {!sideMenu && <TiThMenu className={Styles.menuIcon} onClick={() => dispatch(sideMenu_Ac(true))} />}
         <Routes>
           <Route path="" element={<Coins />} />
         </Routes>

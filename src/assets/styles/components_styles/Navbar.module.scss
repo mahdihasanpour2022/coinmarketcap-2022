@@ -88,6 +88,9 @@
       @include ziro_space;
       @include flex(flex-start, center);
       margin: 0 1.2rem !important;
+      li{
+      margin-bottom: 0;
+      }
     }
   }
 }

@@ -1,0 +1,9 @@
+@import "../common_styles/fonts";
+@import "../common_styles/variable";
+@import "../common_styles/mixins";
+
+.coins {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  min-height: 100vh;
+}

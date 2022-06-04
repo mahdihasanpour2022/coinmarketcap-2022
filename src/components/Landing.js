@@ -20,7 +20,6 @@ const Landing = () => {
     dispatch(fetchCoins())
   }, [dispatch])
 
-  console.log(sideMenu)
   return (
     <>
       <div className={sideMenu ? `${Styles.landingContainerFullWidth} ${Styles.landingContainerlowWidth}` : Styles.landingContainerFullWidth}>

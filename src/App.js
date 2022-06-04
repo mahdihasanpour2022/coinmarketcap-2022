@@ -18,7 +18,6 @@ const App = () => {
         <Route path="/" element={ <Landing />} />
         <Route path="/notfound" element={ <NotFound />} />
         <Route path="/*" element={ <Navigate to="/notfound" />} />
-       
       </Routes>
     </Provider>
     </>

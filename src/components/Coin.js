@@ -9,7 +9,7 @@ const Coin = ({ coin }) => {
   // destructuring coin
   const { name, rank } = coin;
 
-  console.log(coin)
+  // console.log(coin)
   return (
     <>
       <div className={`${Styles.coinContainer} col`}>

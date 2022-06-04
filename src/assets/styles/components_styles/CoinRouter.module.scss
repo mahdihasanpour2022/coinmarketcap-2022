@@ -1,0 +1,58 @@
+@import "../common_styles/variable";
+@import "../common_styles/mixins";
+
+.coinsContainerFullWidth {
+  width:100% ;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $black;
+  color: $white;
+  padding: 1.5rem;
+  box-sizing: border-box;
+z-index: 0;
+  svg {
+    color: $white;
+    font-size: 1.9rem;
+    cursor: pointer;
+    @include transition;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+}
+.coinsContainerLowWidth{
+  width: 65%;
+}
+
+// media query 
+@media (max-width:576px){
+.coinsContainerLowWidth{
+  width: 100%;
+  margin-top: 4rem;
+}
+};
+@media (min-width:576px){
+  .coinsContainerLowWidth{
+width: 70% ;
+}
+};
+@media (min-width:768px){
+  .coinsContainerLowWidth{
+    width: 75% ;
+  }
+};
+@media (min-width:992px){
+  .coinsContainerLowWidth{
+    width: 80% ;
+    
+  }
+};
+@media (min-width:1200px){
+  .coinsContainerLowWidth{
+    width: 85% ;
+    
+  }
+}

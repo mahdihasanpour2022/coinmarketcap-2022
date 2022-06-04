@@ -1,4 +1,15 @@
-$black:#303030;
-$ultra_black:#404040;
-$dark_blue:#282A42;
-$light_blue:#333555;
+@mixin ziro_space{
+  padding: 0 !important;
+  margin: 0 !important;
+};
+
+@mixin transition {
+  transition: all 0.3s ease;
+};
+
+@mixin flex($jc,$ai){
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  @content;
+};

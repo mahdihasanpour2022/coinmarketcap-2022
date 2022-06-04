@@ -8,7 +8,7 @@ const Coins = () => {
 
   return (
     <>
-      {!!loading ? <p>loading ...</p> :
+      {!!loading ? <p>loading coins...</p> :
       !!error ? <p>{error}</p> :
       coins.map(item => <Coin key={item.id} coin={item} />)
       }

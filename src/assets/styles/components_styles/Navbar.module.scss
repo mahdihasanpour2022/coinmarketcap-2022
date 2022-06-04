@@ -1,10 +1,65 @@
+@import "../common_styles/variable";
 @import "../common_styles/mixins";
+@import "../common_styles//fonts";
 
-.navbarSide{
-position: fixed;
-top: 0;
-left: 0;
-width: 25%;
-height: 100vh;
-background-color: $black;
+.navbarSide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35%;
+  height: 100vh;
+  background-color: $ultra_black;
+  padding: 1rem;
+  box-sizing: border-box;
+  color: $white;
+
+  .closeBTNContainer{
+    text-align: right;
+    svg{
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+  .ulList {
+    padding: 0;
+    list-style: none;
+
+    li {
+      a {
+        color: $lightgray;
+        text-decoration: none;
+        &:hover{
+          color: orange;
+        }
+      }
+    }
+  }
+}
+
+// media query 
+@media (max-width:576px){
+  .navbarSide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height:5rem;
+    background-color: $ultra_black;
+    padding: 1rem;
+    box-sizing: border-box;
+    color: $white;
+    z-index: 2;
+    @include flex(flex-start,center);
+    .closeBTNContainer{
+      display: none;
+    }
+    h2{
+      @include ziro_space;
+    }
+    .ulList{
+      @include ziro_space;
+      @include flex(flex-start,center);
+      margin: 0 1.2rem !important;
+    }
+  }
 }

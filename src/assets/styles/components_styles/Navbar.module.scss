@@ -13,53 +13,99 @@
   box-sizing: border-box;
   color: $white;
 
-  .closeBTNContainer{
+  .closeBTNContainer {
     text-align: right;
-    svg{
+
+    svg {
+      color: $white;
       font-size: 1.5rem;
       cursor: pointer;
     }
   }
+
+  h2 {
+    padding-bottom:0.5rem;
+    border-bottom: 1px solid $orange;
+  }
+
   .ulList {
     padding: 0;
     list-style: none;
 
     li {
-      a {
+      .navlink {
         color: $lightgray;
         text-decoration: none;
-        &:hover{
-          color: orange;
+
+        &:hover {
+          color: lightgray;
         }
+      }
+
+      .active {
+        color: $orange;
       }
     }
   }
 }
 
 // media query 
-@media (max-width:576px){
+@media (max-width:576px) {
   .navbarSide {
     position: fixed;
     top: 0;
     left: 0;
     width: 100% !important;
-    height:5rem;
+    height: 5rem;
     background-color: $ultra_black;
     padding: 1rem;
     box-sizing: border-box;
     color: $white;
     z-index: 2;
-    @include flex(flex-start,center);
-    .closeBTNContainer{
+    @include flex(flex-start, center);
+
+    .closeBTNContainer {
       display: none;
     }
-    h2{
+
+    h2 {
       @include ziro_space;
     }
-    .ulList{
+
+    .ulList {
       @include ziro_space;
-      @include flex(flex-start,center);
+      @include flex(flex-start, center);
       margin: 0 1.2rem !important;
     }
+  }
+}
+
+@media (min-width:576px) {
+  .navbarSide {
+    width: 30%;
+  }
+}
+
+;
+
+@media (min-width:768px) {
+  .navbarSide {
+    width: 25%;
+  }
+}
+
+;
+
+@media (min-width:992px) {
+  .navbarSide {
+    width: 20%;
+  }
+}
+
+;
+
+@media (min-width:1200px) {
+  .navbarSide {
+    width: 15%;
   }
 }

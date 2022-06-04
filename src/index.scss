@@ -1,4 +1,18 @@
+@import "./assets//styles/common_styles/fonts";
 body{
   margin: 0 !important;
   padding: 0 !important;
+}
+a,p,h1,h2,h3,h4,h5,h6{
+  font-family: $OpenSans ;
+  font-weight: 100;
+}
+a{
+  text-decoration: none;
+}
+ul , ol {
+  list-style: none;
+}
+li{
+  list-style-type:none ;
 }

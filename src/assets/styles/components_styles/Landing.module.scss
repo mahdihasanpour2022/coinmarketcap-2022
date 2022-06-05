@@ -10,12 +10,12 @@
   position: absolute;
   top: 0;
   right: 0;
-  // background-color: $black;
+  background-color: $ultra_black;
   color: $white;
   padding: 1.5rem;
   box-sizing: border-box;
   // z-index: 1;
-
+  
   .menuIcon {
     // color: $white;
     color: darkgray;
@@ -28,9 +28,11 @@
     }
   }
   .lineChart , .barChart , .pieChart{
+    background-color: rgb(220,220,220);
     border: 1px solid lightgray;
     border-radius: 5px;
-    margin:0.4rem;
+    padding: 0.5rem;
+    height: 100% ;
   }
   
 }

@@ -24,21 +24,21 @@ const Landing = () => {
         {!sideMenu && <TiThMenu className={Styles.menuIcon} onClick={() => dispatch(sideMenu_Ac(true))} />}
         <div className="container">
 
-          <div className="row m-0">
-            <div className={`${Styles.lineChart} col-12`}>
-              <LineChart />
+          <div className="row g-2">
+            <div className="col-md-12">
+              <div className={Styles.lineChart}>
+                <LineChart />
+              </div>
             </div>
-          </div>
-
-          <div className="row m-0">
-            <div className={`${Styles.barChart} col-12`}>
-              <BarChart />
+            <div className="col-lg-6 ">
+              <div className={Styles.barChart}>
+                <BarChart />
+              </div>
             </div>
-          </div>
-
-          <div className="row m-0">
-            <div className={`${Styles.pieChart} col-12`}>
-              <PieChart />
+            <div className="col-lg-6">
+              <div className={Styles.pieChart} >
+                <PieChart />
+              </div>
             </div>
           </div>
 

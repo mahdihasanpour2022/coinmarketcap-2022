@@ -1,56 +1,47 @@
 import React from 'react';
 import { useSelector } from "react-redux";
-import { Line } from 'react-chartjs-2';
-
-
+import { Bar } from 'react-chartjs-2';
 
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  PointElement,
-  LineElement,
+  BarElement,
   Title,
   Tooltip,
   Legend,
 } from 'chart.js';
 
-const LineChart = () => {
-  
-  const { coinsSortByRank } = useSelector(state => state.coinsState,);
+const BarChart = () => {
 
+  const { coinsSortByRank } = useSelector(state => state.coinsState,);
 
   ChartJS.register(
     CategoryScale,
     LinearScale,
-    PointElement,
-    LineElement,
+    BarElement,
     Title,
     Tooltip,
     Legend
   );
-
   const options = {
     responsive: true,
     plugins: {
       legend: {
         display: false,
-        // position: 'bottom',
-        // align:"start",
       },
       title: {
         display: true,
-        text: 'change 1h ',
+        text: 'volume 24h',
       },
     },
   };
-
 
   const data = {
     labels: coinsSortByRank.map(item => item.name),
     datasets: [{
       label: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-      data: coinsSortByRank.map(item => item.quotes.USD.percent_change_1h),
+      data: coinsSortByRank.map(item => item.quotes.USD.volume_24h),
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -71,14 +62,28 @@ const LineChart = () => {
     }]
   };
 
+console.log(coinsSortByRank)
   return (
     <div>
-      <Line
-        options={options}
-        data={data}
-      />
+      <Bar options={options} data={data} />
     </div>
   );
 };
 
-export default LineChart;
+export default BarChart;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

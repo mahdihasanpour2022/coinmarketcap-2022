@@ -9,6 +9,7 @@ import Styles from "../assets/styles/components_styles/Landing.module.scss";
 import { TiThMenu } from "react-icons/ti";
 // components 
 import LineChart from "../components/LineChart";
+import BarChart from "../components/BarChart";
 
 const Landing = () => {
 
@@ -22,8 +23,13 @@ const Landing = () => {
         {!sideMenu && <TiThMenu className={Styles.menuIcon} onClick={() => dispatch(sideMenu_Ac(true))} />}
         <div className="container">
           <div className="row">
-            <div className={`${Styles.lineChart} col`}>
+            <div className={`${Styles.lineChart} col-12`}>
               <LineChart />
+            </div>
+          </div>
+          <div className="row">
+            <div className={`${Styles.barChart} col`}>
+              <BarChart />
             </div>
           </div>
         </div>

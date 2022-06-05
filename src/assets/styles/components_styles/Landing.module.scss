@@ -1,20 +1,24 @@
 @import "../common_styles/variable";
 @import "../common_styles/mixins";
 
+
+
+
 .landingContainerFullWidth {
   width:100%;
   min-height: 100vh;
   position: absolute;
   top: 0;
   right: 0;
-  background-color: $black;
+  // background-color: $black;
   color: $white;
   padding: 1.5rem;
   box-sizing: border-box;
-  z-index: 1;
+  // z-index: 1;
 
   .menuIcon {
-    color: $white;
+    // color: $white;
+    color: darkgray;
     font-size: 1.9rem;
     cursor: pointer;
     @include transition;
@@ -22,6 +26,10 @@
     &:hover {
       color: $orange;
     }
+  }
+  .lineChart{
+    border: 1px solid lightgray;
+    border-radius: 5px;
   }
 }
 .landingContainerlowWidth{

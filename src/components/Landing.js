@@ -10,6 +10,7 @@ import { TiThMenu } from "react-icons/ti";
 // components 
 import LineChart from "../components/LineChart";
 import BarChart from "../components/BarChart";
+import PieChart from "../components/PieChart";
 
 const Landing = () => {
 
@@ -22,16 +23,25 @@ const Landing = () => {
       <div className={sideMenu ? `${Styles.landingContainerFullWidth} ${Styles.landingContainerlowWidth}` : Styles.landingContainerFullWidth}>
         {!sideMenu && <TiThMenu className={Styles.menuIcon} onClick={() => dispatch(sideMenu_Ac(true))} />}
         <div className="container">
-          <div className="row">
+
+          <div className="row m-0">
             <div className={`${Styles.lineChart} col-12`}>
               <LineChart />
             </div>
           </div>
-          <div className="row">
-            <div className={`${Styles.barChart} col`}>
+
+          <div className="row m-0">
+            <div className={`${Styles.barChart} col-12`}>
               <BarChart />
             </div>
           </div>
+
+          <div className="row m-0">
+            <div className={`${Styles.pieChart} col-12`}>
+              <PieChart />
+            </div>
+          </div>
+
         </div>
       </div>
 

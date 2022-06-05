@@ -24,6 +24,7 @@ const BarChart = () => {
     Tooltip,
     Legend
   );
+
   const options = {
     responsive: true,
     plugins: {
@@ -36,6 +37,7 @@ const BarChart = () => {
       },
     },
   };
+
 
   const data = {
     labels: coinsSortByRank.map(item => item.name),
@@ -62,7 +64,7 @@ const BarChart = () => {
     }]
   };
 
-console.log(coinsSortByRank)
+  console.log(coinsSortByRank)
   return (
     <div>
       <Bar options={options} data={data} />

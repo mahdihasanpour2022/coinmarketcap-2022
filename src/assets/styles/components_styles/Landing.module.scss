@@ -27,10 +27,12 @@
       color: $orange;
     }
   }
-  .lineChart{
+  .lineChart , .barChart , .pieChart{
     border: 1px solid lightgray;
     border-radius: 5px;
+    margin:0.4rem;
   }
+  
 }
 .landingContainerlowWidth{
   width: 65%;

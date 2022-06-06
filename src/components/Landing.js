@@ -1,8 +1,10 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 // react redux 
 import { useDispatch, useSelector } from 'react-redux';
 // action creator 
 import { sideMenu_Ac } from "../redux/menu/menu_AC";
+// action creator 
+import { fetchCoinsSortByRank} from '../redux/coins/coinAC';
 // scss 
 import Styles from "../assets/styles/components_styles/Landing.module.scss";
 // react icons 
@@ -16,6 +18,11 @@ const Landing = () => {
 
   const dispatch = useDispatch();
   const { sideMenu } = useSelector(state => state.menuState);
+  // const {  coinsSortByRank, error, loading } = useSelector(state => state.coinsState)
+
+  useEffect(() => {
+    dispatch(fetchCoinsSortByRank());
+  }, [dispatch])
 
   return (
     <>

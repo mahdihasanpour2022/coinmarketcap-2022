@@ -26,14 +26,51 @@ const RadialBar = () => {
               chart: {
                 height: 350,
                 type: 'radialBar',
+                offsetY: 20
               },
               plotOptions: {
                 radialBar: {
                   hollow: {
-                    size: '40%',
+                    size: '70%',
+                  },
+                  startAngle: -135,
+                  endAngle: 135,
+                  dataLabels: {
+                    name: {
+                      fontSize: '20px',
+                      color: "darkgray",
+                      offsetY: 120
+                    },
+                    value: {
+                      fontSize: '25px',
+                      fontWeight:"900",
+                      color:"#727272",
+                      offsetY: -5,
+                      fontSize: '22px',
+                      color: "#ADD485",
+                      formatter: function (val) {
+                        return val + "%";
+                      }
+                    },
                   }
                 },
+                
               },
+              fill: {
+                // type: 'gradient',
+                gradient: {
+                    shade: 'dark',
+                    shadeIntensity: 0.15,
+                    inverseColors: false,
+                    opacityFrom: 1,
+                    opacityTo: 1,
+                    stops: [0, 50, 65, 91]
+                },
+              },
+              stroke: {
+                dashArray: 2,
+              },
+              colors: ['#ADD485'],
               labels: [!!Object.keys(highestPrice).length ? highestPrice.name : "undifined"],
             }}
             type="radialBar"

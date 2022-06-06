@@ -13,6 +13,7 @@ import { TiThMenu } from "react-icons/ti";
 import LineChart from "../components/LineChart";
 import BarChart from "../components/BarChart";
 import PieChart from "../components/PieChart";
+import RadialBar from "../components/RadialBar";
 
 const Landing = () => {
 
@@ -32,6 +33,12 @@ const Landing = () => {
 
           <div className="row g-4">
 
+          <div className="col-md-auto">
+              <div className={Styles.RadialBarChart}>
+                <RadialBar />
+              </div>
+            </div>
+            
             <div className="col-md-12">
               <div className={Styles.lineChart}>
                 <LineChart />

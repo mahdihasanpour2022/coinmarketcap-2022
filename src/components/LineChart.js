@@ -5,9 +5,10 @@ import Chart from "react-apexcharts";
 
 
 const LineChart = () => {
-  const { coins } = useSelector(state => state.coinsState,);
 
-  const [data, setData] = useState([])
+  const { coins } = useSelector(state => state.coinsState);
+
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     let coinsPrice1and2 = coins.filter(item => item.price_change_24h > 0.4 && item.price_change_24h < 100);

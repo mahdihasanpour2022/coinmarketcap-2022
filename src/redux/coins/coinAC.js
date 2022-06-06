@@ -1,12 +1,12 @@
 // get data 
 import { 
-  getCoinsSortByRank,
+  getCoins,
   //  getCoinsSortById,
   //   getCoinsSortByChange
    } from "../../service_api/getdata";
 // local storage 
 import { 
-  save_coinsSortByRank_in_local,
+  save_coins_in_local,
   //  save_coinsSortById_in_local ,
   //  save_coinsSortBychange1h_in_local,
   //  save_coinsSortBychange24h_in_local,
@@ -44,13 +44,13 @@ export const fetchCoinsSortByRank = () => {
   return async (dispatch) => {
     try {
       dispatch(loading_coin_AC(true))
-      const res = await getCoinsSortByRank();
-      console.log(res)
+      const res = await getCoins();
+      // console.log(res)
       dispatch(loading_coin_AC(false))
       dispatch(add_coin_sortByRank_AC(res))
       dispatch(errors_coin_AC(null))
 
-      save_coinsSortByRank_in_local(res)
+      save_coins_in_local(res)
     } catch (error) {
       dispatch(loading_coin_AC(false))
       dispatch(add_coin_sortByRank_AC([]))

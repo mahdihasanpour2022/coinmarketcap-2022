@@ -1,80 +1,40 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from 'react';
+import { useSelector } from "react-redux";
 import Coin from "../components/Coin";
-// action creator 
-import { 
-  fetchCoinsSortByRank,
-  //  fetchCoinsSortById ,
-  //  fetchCoinsSortByChange
-  } from '../redux/coins/coinAC';
 // scss 
 import Styles from "../assets/styles/components_styles/Coins.module.scss";
 
 
 const Coins = () => {
 
-  // const [valuee,setValuee] = useState("rank");
+  const { coins, error, loading } = useSelector(state => state.coinsState)
+  const [searched, setSearched] = useState([])
 
-  const dispatch = useDispatch();
-  // const { coinsSortById, coinsSortByRank,coinsSortBychange1h,coinsSortBychange24h,coinsSortBychange7d, error, loading } = useSelector(state => state.coinsState)
-  const {  coinsSortByRank, error, loading } = useSelector(state => state.coinsState)
-
-  // const [array, setArray] = useState(coinsSortByRank);
-
-  useEffect(() => {
-    dispatch(fetchCoinsSortByRank());
-  }, [dispatch])
-
-  // const selectHandler = e => {
-  //   const selectValue = e.target.value;
-  //   setValuee(selectValue)
-
-
-  //   if (selectValue === "id") {
-  //     dispatch(fetchCoinsSortById())
-  //     setArray(coinsSortById)
-  //   }else if (selectValue === "rank"){
-  //     dispatch(fetchCoinsSortByRank())
-  //     setArray(coinsSortByRank)
-  //   }else if (selectValue === "percent_change_1h"){
-  //     dispatch(fetchCoinsSortByChange())
-  //     setArray(coinsSortBychange1h)
-  //   }else if(selectValue === "percent_change_24h"){
-  //     dispatch(fetchCoinsSortByChange())
-  //     setArray(coinsSortBychange24h)
-  //   }else if(selectValue === "percent_change_7d"){
-  //     dispatch(fetchCoinsSortByChange())
-  //     setArray(coinsSortBychange7d)
-  //   }else{
-  //     setArray(coinsSortByRank)
-  //   }
-  // }
-
-  // console.log(coinsSortBychange1h)
-  // console.log(array)
+  const searchInputHandler = (e) => {
+    const textQuery = e.target.value;
+    console.log(coins.filter(item => item.name.toLowerCase().includes(textQuery.toLowerCase())))
+    setSearched(coins.filter(item => item.name.toLowerCase().includes(textQuery.toLowerCase())))
+  }
   return (
     <>
       {
         !!loading ? <p>loading coins...</p> :
           !!error ? <p>{error}</p> :
-            !!coinsSortByRank.length &&
+            !!coins.length &&
 
-            <div className="container">
+            <div className="container-fluid">
 
-              {/* <div className="row my-3">
-                <div className={`${Styles.selectContainer} col-12`}>
-                  <select value={valuee} onChange={e => selectHandler(e)} className={Styles.select}>
-                    <option value="rank">Rank</option>
-                    <option value="id">ID</option>
-                    <option value="percent_change_1h">percent_change_1h</option>
-                    <option value="percent_change_24h">percent_change_24h</option>
-                    <option value="percent_change_7d">percent_change_7d</option>
-                  </select>
+              <div className="row my-3">
+                <div className={`${Styles.inputContainer} col-12`}>
+                  <input onChange={searchInputHandler} type="text" placeholder='search coins ...' />
                 </div>
-              </div> */}
+              </div>
 
               <div className={`${Styles.coins}`}>
-                {coinsSortByRank.map(item => <Coin key={item.name} coin={item} />)}
+                {!!searched.length ?
+                    searched.map(item => <Coin key={item.name} coin={item} />) :
+                    coins.map(item => <Coin key={item.name} coin={item} />)
+                }
               </div>
             </div>
       }

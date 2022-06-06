@@ -1,6 +1,6 @@
 
 const initialCoins = {
-  coinsSortByRank: localStorage.getItem("coinsSortByRank") ? JSON.parse(localStorage.getItem("coinsSortByRank")) : [],
+  coins: localStorage.getItem("coinsSortByRank") ? JSON.parse(localStorage.getItem("coinsSortByRank")) : [],
   loading: false,
   error: null,
   // coinsSortById: localStorage.getItem("coinsSortById") ? JSON.parse(localStorage.getItem("coinsSortById")) : [],
@@ -12,7 +12,7 @@ const initialCoins = {
 const coinsReducer = (state = initialCoins, action) => {
   switch (action.type) {
     case "ADD_COINS":
-      return { ...state, coinsSortByRank: action.payload };
+      return { ...state, coins: action.payload };
     case "LOADING_COINS":
       return { ...state, loading: action.payload };
     case "ERRORS_COINS":

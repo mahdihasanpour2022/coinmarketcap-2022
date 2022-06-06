@@ -11,8 +11,8 @@ import Styles from "../assets/styles/components_styles/Landing.module.scss";
 import { TiThMenu } from "react-icons/ti";
 // components 
 import LineChart from "../components/LineChart";
-import BarChart from "../components/BarChart";
-import PieChart from "../components/PieChart";
+// import BarChart from "../components/BarChart";
+// import PieChart from "../components/PieChart";
 
 const Landing = () => {
 
@@ -37,16 +37,19 @@ const Landing = () => {
                 <LineChart />
               </div>
             </div>
-            <div className="col-lg-6 ">
+
+            {/* <div className="col-lg-6 ">
               <div className={Styles.barChart}>
                 <BarChart />
               </div>
             </div>
+
             <div className="col-lg-6">
               <div className={Styles.pieChart} >
                 <PieChart />
               </div>
-            </div>
+            </div> */}
+            
           </div>
 
         </div>

@@ -27,6 +27,11 @@
       @include ziro_space;
       font-size: $fs_small;
     }
+    img{
+      width: 30px;
+      height: 30px;
+      object-fit: cover;
+    }
 
     .redSpan {
       color: rgb(185, 67, 67);

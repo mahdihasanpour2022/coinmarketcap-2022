@@ -1,4 +1,4 @@
-export const save_coinsSortByRank_in_local =(data)=>{
+export const save_coins_in_local =(data)=>{
   localStorage.setItem("coinsSortByRank" , JSON.stringify(data) )
 }
 

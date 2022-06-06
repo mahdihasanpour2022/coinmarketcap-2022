@@ -10,26 +10,28 @@
   position: absolute;
   top: 0;
   right: 0;
-  background-color: $ultra_black;
+  background-color: $lightgray;
+  display: inline-block;
   color: $white;
   padding: 1.5rem;
   box-sizing: border-box;
   // z-index: 1;
   
   .menuIcon {
-    // color: $white;
-    color: darkgray;
+    color: $darkgray;
     font-size: 1.9rem;
+    margin-bottom: 1rem;
     cursor: pointer;
     @include transition;
 
     &:hover {
-      color: $orange;
+      color: $green;
     }
   }
   .lineChart , .barChart , .pieChart{
-    background-color: rgb(220,220,220);
-    border: 1px solid lightgray;
+    background-color: white;
+    // border: 1px solid lightgray;
+  box-shadow: 0px 0px 10px 3px rgba(169, 169, 169,0.2);
     border-radius: 5px;
     padding: 0.5rem;
     height: 100% ;

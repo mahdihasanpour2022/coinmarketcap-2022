@@ -7,21 +7,18 @@
   position: absolute;
   top: 0;
   right: 0;
-  // background-color: $black;
-  // color: $white;
+  background-color: $lightgray;
   padding: 1.5rem;
   box-sizing: border-box;
   z-index: 1;
 
   .menuIcon {
-    // color: $white;
-    color: darkgray;
+    color: $darkgray;
     font-size: 1.9rem;
     cursor: pointer;
     @include transition;
-
     &:hover {
-      color: $orange;
+      color: $green;
     }
   }
 }

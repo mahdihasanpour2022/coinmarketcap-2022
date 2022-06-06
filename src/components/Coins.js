@@ -56,7 +56,7 @@ const Coins = () => {
             <div className="container">
 
               <div className="row my-3">
-                <div className="col-12">
+                <div className={`${Styles.selectContainer} col-12`}>
                   <select value={valuee} onChange={e => selectHandler(e)} className={Styles.select}>
                     <option value="rank">Rank</option>
                     <option value="id">ID</option>

@@ -8,7 +8,7 @@ import { sideMenu_Ac } from "../redux/menu/menu_AC";
 // scss 
 import Styles from "../assets/styles/components_styles/Navbar.module.scss";
 // react icons 
-import { IoIosClose } from "react-icons/io";
+import { GrFormClose } from "react-icons/gr";
 
 const Navbar = () => {
   const dispatch = useDispatch()
@@ -19,7 +19,7 @@ const Navbar = () => {
       {!!sideMenu &&
         <div className={Styles.navbarSide} >
           <div className={Styles.closeBTNContainer}>
-            <IoIosClose onClick={() => dispatch(sideMenu_Ac(false))} />
+            <GrFormClose onClick={() => dispatch(sideMenu_Ac(false))} />
           </div>
           <h2>
             <Link to="/" >Crypto</Link>

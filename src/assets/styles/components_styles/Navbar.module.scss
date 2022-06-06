@@ -7,15 +7,18 @@
   top: 0;
   left: 0;
   width: 35%;
-  height: 100% ;
-  background-color: $ultra_black;
+  height: 100%;
+  // background-color: $ultra_black;
+  background-color: $white;
   padding: 1rem;
   box-sizing: border-box;
   color: $white;
   z-index: 1;
+  box-shadow: 5px 0px 10px 5px rgba(169, 169, 169,0.25);
 
   .closeBTNContainer {
     text-align: right;
+    opacity: 0.3;
 
     svg {
       color: $white;
@@ -26,9 +29,9 @@
 
   h2 {
     a {
-      color: $white;
+      color: $darkgray;
       padding-bottom: 0.5rem;
-      border-bottom: 1px solid $orange;
+      border-bottom: 1px solid $green;
       display: block;
     }
   }
@@ -39,18 +42,19 @@
 
     li {
       margin-bottom: 0.8rem;
+
       .navlink {
-        color: $lightgray;
+        color: $darkgray;
         text-decoration: none;
         margin-right: 1rem;
 
         &:hover {
-          color: lightgray;
+          color: $green;
         }
       }
 
       .active {
-        color: $orange;
+        color: $green;
       }
     }
   }
@@ -80,7 +84,6 @@
         border-bottom: none;
         display: inline-block;
         position: relative;
-        top:-0.1rem;
       }
     }
 
@@ -88,8 +91,9 @@
       @include ziro_space;
       @include flex(flex-start, center);
       margin: 0 1.2rem !important;
-      li{
-      margin-bottom: 0;
+
+      li {
+        margin-bottom: 0;
       }
     }
   }

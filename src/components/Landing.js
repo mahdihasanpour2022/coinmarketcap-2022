@@ -14,6 +14,7 @@ import LineChart from "../components/LineChart";
 import BarChart from "../components/BarChart";
 import PieChart from "../components/PieChart";
 import RadialBar from "../components/RadialBar";
+import RadialBar2 from "../components/RadialBar2";
 
 const Landing = () => {
 
@@ -33,15 +34,21 @@ const Landing = () => {
 
           <div className="row g-4">
 
-          <div className="col-md-auto">
+            <div className="col-md-12">
+              <div className={Styles.lineChart}>
+                <LineChart />
+              </div>
+            </div>
+
+            <div className="col-lg-6">
               <div className={Styles.RadialBarChart}>
                 <RadialBar />
               </div>
             </div>
-            
-            <div className="col-md-12">
-              <div className={Styles.lineChart}>
-                <LineChart />
+
+            <div className="col-lg-6">
+              <div className={Styles.AreaChartChart}>
+                <RadialBar2 />
               </div>
             </div>
 

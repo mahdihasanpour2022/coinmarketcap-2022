@@ -3,17 +3,17 @@ import { useSelector } from "react-redux";
 // apexcharts 
 import Chart from "react-apexcharts";
 
-const RadialBar = () => {
+const RadialBar2 = () => {
 
   const { coins } = useSelector(state => state.coinsState,);
   const [highestPrice, sethighestPrice] = useState({});
 
   useEffect(() => {
     const coinsWithPercent24h = coins.map(item => {
-      return { ...item, up_percent: (item.high_24h * 100) / item.low_24h - 100 }
+      return { ...item, low_percent: (item.low_24h * 100) / item.low_24h - 100 }
     })
-    const biggestPercent = Math.max(...coinsWithPercent24h.map(item => item.up_percent));
-    const findHighestPrice = coinsWithPercent24h.filter(item => item.up_percent === biggestPercent)
+    const biggestPercent = Math.min(...coinsWithPercent24h.map(item => item.low_percent));
+    const findHighestPrice = coinsWithPercent24h.filter(item => item.low_percent === biggestPercent)
     sethighestPrice(...findHighestPrice)
   }, [coins])
 
@@ -22,7 +22,7 @@ const RadialBar = () => {
       {!!coins.length &&
         <div >
           <Chart
-            series={!!Object.keys(highestPrice).length ? [parseInt(highestPrice.up_percent)] : [15]}
+            series={!!Object.keys(highestPrice).length ? [parseInt(highestPrice.low_percent)] : [15]}
             options={{
               chart: {
                 height: 350,
@@ -46,7 +46,7 @@ const RadialBar = () => {
                       fontWeight: "900",
                       offsetY: -5,
                       fontSize: '25px',
-                      color: "#ADD485",
+                      color: "#FF8077",
                       formatter: function (val) {
                         return val + "%";
                       }
@@ -69,7 +69,7 @@ const RadialBar = () => {
               stroke: {
                 dashArray: 2,
               },
-              colors: ['#ADD485'],
+              colors: ['#FF8077'],
               labels: [!!Object.keys(highestPrice).length ? highestPrice.name : "undifined"],
             }}
             type="radialBar"
@@ -84,4 +84,4 @@ const RadialBar = () => {
   );
 };
 
-export default RadialBar;
+export default RadialBar2;

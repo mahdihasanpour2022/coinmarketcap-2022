@@ -11,8 +11,8 @@ const LineChart = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    let coinsPrice1and2 = coins.filter(item => item.price_change_24h > 0.4 && item.price_change_24h < 100);
-    coinsPrice1and2 = coinsPrice1and2.slice(0, 12);
+    let coinsPrice1and2 = coins.filter(item => item.price_change_24h > 0.01 && item.price_change_24h < 100);
+    coinsPrice1and2 = coinsPrice1and2.slice(0, 10);
     const finalResult = coinsPrice1and2.map(coin =>{
       return { name: coin.name, price: coin.price_change_24h };
     })
